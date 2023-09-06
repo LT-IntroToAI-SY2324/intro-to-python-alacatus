@@ -16,85 +16,59 @@ from typing import List, TypeVar
 
 
 def absolute(n: int) -> int:
-    """Gives the absolute value of the passed in number. Cannot use the built in
-    function `abs`.
-
-    Args:
-        n - the number to take the absolute value of
-
-    Returns:
-        the absolute value of the passed in number
-    """
-    raise NotImplementedError("absolute")
-
+    if n < 0:
+        return n * -1
+    elif n > 0:
+        return n
+    elif n == 0:
+        return 0
+    
 
 def factorial(n: int) -> int:
-    """Takes a number n, and computes the factorial n! You can assume the passed in
-    number will be positive
+    result = 1 
+    for x in range(1, n+1):
+        result *= x
+    
+    return result
+    
 
-    Args:
-        n - the number to compute factorial of
-
-    Returns:
-        factorial of the passed in number
-    """
-    raise NotImplementedError("factorial")
 
 
 T = TypeVar("T")
 
 
 def every_other(lst: List[T]) -> List[T]:
-    """Takes a list and returns a list of every other element in the list, starting with
-    the first.
-
-    Args:
-        lst - a list of any (constrained by type T to be the same type as the returned
-            list)
-
-    Returns:
-        a list of every of other item in the original list starting with the first
-    """
-    raise NotImplementedError("every_other")
+    for x in range(1,len(List),2):
+        return(List[x])
+    
 
 
 def sum_list(lst: List[int]) -> int:
-    """Takes a list of numbers, and returns the sum of the numbers in that list. Cannot
-    use the built in function `sum`.
+    int summ = 0
+    for x in range(len(List)):
+        summ += List[x]
+    return summ
 
-    Args:
-        lst - a list of numbers
-
-    Returns:
-        the sum of the passed in list
-    """
-    raise NotImplementedError("sum_list")
+    
 
 
 def mean(lst: List[int]) -> float:
-    """Takes a list of numbers, and returns the mean of the numbers.
-
-    Args:
-        lst - a list of numbers
-
-    Returns:
-        the mean of the passed in list
-    """
-    raise NotImplementedError("mean")
+    float mean = 0
+    for x in range(len(List)):
+        mean += List[x]
+    mean /= len(List)
+    return mean
+    
 
 
 def median(lst: List[int]) -> float:
-    """Takes an ordered list of numbers, and returns the median of the numbers.
-
-    If the list has an even number of values, it computes the mean of the two center
-    values.
-
-    Args:
-        lst - an ordered list of numbers
-
-    Returns:
-        the median of the passed in list
-    """
+    r = len(List)
+    if r % 2 == 0:
+        median1 = n_num[n//2]
+        median2 = n_num[n//2 - 1]
+        median = (median1 + median2)/2
+    else:
+        median = n_num[n//2]
     raise NotImplementedError("median")
 
 
@@ -123,7 +97,7 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
 # this line causes the nested code to be skipped if the file is imported instead of run
 if __name__ == "__main__":
     assert absolute(-1) == 1, "absolute of -1 failed"
-    assert factorial(4) == 24, "factorial of 4 failed"
+    assert factorial(3) == 6, "factorial of 3 failed"
     assert every_other([1, 2, 3, 4, 5]) == [
         1,
         3,
