@@ -14,6 +14,7 @@ check, if you do not complete the generative AI portion of the assignment.
 
 from typing import List, TypeVar
 
+import random
 
 def absolute(n: int) -> int:
     if n < 0:
@@ -44,7 +45,7 @@ def every_other(lst: List[T]) -> List[T]:
 
 
 def sum_list(lst: List[int]) -> int:
-    int summ = 0
+    summ = 0
     for x in range(len(List)):
         summ += List[x]
     return summ
@@ -53,7 +54,7 @@ def sum_list(lst: List[int]) -> int:
 
 
 def mean(lst: List[int]) -> float:
-    float mean = 0
+    mean = 0
     for x in range(len(List)):
         mean += List[x]
     mean /= len(List)
@@ -64,15 +65,35 @@ def mean(lst: List[int]) -> float:
 def median(lst: List[int]) -> float:
     r = len(List)
     if r % 2 == 0:
-        median1 = n_num[n//2]
-        median2 = n_num[n//2 - 1]
+        median1 = List[r//2]
+        median2 = List[r//2 - 1]
         median = (median1 + median2)/2
     else:
-        median = n_num[n//2]
-    raise NotImplementedError("median")
+        median = List[r//2]
+    return median
+    
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
+    r = len(List)
+    while r >= 2:
+        randomed = random.randint(1, r)
+        List.remove(randomed)
+    return List
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     """Given an list of names (strings), play 'duck duck goose' with it, knocking out
     every third name (wrapping around) until only two names are left.
 
