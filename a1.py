@@ -39,15 +39,17 @@ T = TypeVar("T")
 
 
 def every_other(lst: List[T]) -> List[T]:
-    for x in range(1,len(List),2):
-        return(List[x])
-    
+    listt = []
+    for x in range(0,len(lst),2):
+        listt.append(lst[x])
+    return listt
+
 
 
 def sum_list(lst: List[int]) -> int:
     summ = 0
-    for x in range(len(List)):
-        summ += List[x]
+    for x in range(len(lst)):
+        summ += lst[x]
     return summ
 
     
@@ -55,31 +57,37 @@ def sum_list(lst: List[int]) -> int:
 
 def mean(lst: List[int]) -> float:
     mean = 0
-    for x in range(len(List)):
-        mean += List[x]
-    mean /= len(List)
+    for x in range(len(lst)):
+        mean += lst[x]
+    mean /= len(lst)
     return mean
     
 
 
 def median(lst: List[int]) -> float:
-    r = len(List)
+    r = len(lst)
     if r % 2 == 0:
-        median1 = List[r//2]
-        median2 = List[r//2 - 1]
+        median1 = lst[r//2]
+        median2 = lst[r//2 - 1]
         median = (median1 + median2)/2
     else:
-        median = List[r//2]
+        median = lst[r//2]
     return median
     
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
-    r = len(List)
-    while r >= 2:
-        randomed = random.randint(1, r)
-        List.remove(randomed)
-    return List
+    r = len(lst)
+    if r > 2:
+        while r > 2:
+            randomed = random.randint(1, r)
+            lst.pop(randomed)
+            r-=1
+        return lst
+    else:
+        return lst
+listt = ["roscoe", "law"]
+print(duck_duck_goose(listt))
 
 
 
@@ -90,32 +98,28 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
 
 
 
+"""Given an list of names (strings), play 'duck duck goose' with it, knocking out
+every third name (wrapping around) until only two names are left.
 
+In other words, when you hit the end of the list, wrap around and keep counting from
+where you were.
 
+For example, if given this list ['Nathan', 'Sasha', 'Sara', 'Jennie'], you'd first
+knock out Sara. Then first 'duck' on Jennie, wrap around to 'duck' on Nathan and
+'goose' on Sasha - knocking him out and leaving only Nathan and Jennie.
 
+You may assume the list has 3+ names to start
 
-    """Given an list of names (strings), play 'duck duck goose' with it, knocking out
-    every third name (wrapping around) until only two names are left.
+Args:
+    lst - a list of names (strings)
 
-    In other words, when you hit the end of the list, wrap around and keep counting from
-    where you were.
-
-    For example, if given this list ['Nathan', 'Sasha', 'Sara', 'Jennie'], you'd first
-    knock out Sara. Then first 'duck' on Jennie, wrap around to 'duck' on Nathan and
-    'goose' on Sasha - knocking him out and leaving only Nathan and Jennie.
-
-    You may assume the list has 3+ names to start
-
-    Args:
-        lst - a list of names (strings)
-
-    Returns:
-        the resulting list after playing duck duck goose
-    """
-    raise NotImplementedError("duck_duck_goose")
+Returns:
+    the resulting list after playing duck duck goose
+"""
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
+
 if __name__ == "__main__":
     assert absolute(-1) == 1, "absolute of -1 failed"
     assert factorial(3) == 6, "factorial of 3 failed"
