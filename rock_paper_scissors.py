@@ -8,12 +8,15 @@ print(f"you chose {player}, computer chose {bot}")
 
 if player == bot:
     print("both chose the same, you tie!")
-if player == "scissors" and bot == "rock":
+elif player == "scissors" and bot == "rock":
     print("rock smashes scissors, you lose!")
-if player == "rock" and bot == "scissors":
+elif player == "rock" and bot == "scissors":
     print("rock smashes scissors, you win!")
-if player == "scissors" and bot == "paper":
+elif player == "scissors" and bot == "paper":
     print("scissors cut paper, you win!")
-if player == "paper" and bot == "scissors":
+elif player == "paper" and bot == "scissors":
     print("scissors cut paper, you lose!")
-
+elif player == "paper" and bot == "rock":
+    print("paper smothers rock, you win!")
+elif player == "rock" and bot == "paper":
+    print("paper smothers rock, you lose!")

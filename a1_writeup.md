@@ -13,11 +13,12 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 ## Reflection Questions
 
 1. What is your initial thoughts about the python programming language?
-
+ it seems more simple in some ways, than java, although balancing learning more Java in APCSA and learning more python is getting interesting when it comes to remembering syntax
 
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
-
+The basic functionalities are the same as in java with how code is structured somewhat but Python seems more "open ended"
 
 
 3. What are some things that you learned through this assignment?
+This assignment was more of a review but your solutions on github helped me work through problems where I was stuck, or just gave me new ideas

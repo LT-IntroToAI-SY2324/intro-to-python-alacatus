@@ -77,19 +77,13 @@ def median(lst: List[int]) -> float:
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
-    r = len(lst)
-    if r > 2:
-        while r > 2:
-            randomed = random.randint(1, r)
-            lst.pop(randomed)
-            r-=1
-        return lst
-    else:
-        return lst
-listt = ["roscoe", "law"]
-print(duck_duck_goose(listt))
-
-
+    i = 0
+    while len(lst) > 2:
+        i += 2
+        if i >= len(lst):
+             i -= len(lst)
+        lst.pop(i)
+    return lst
 
 
 
